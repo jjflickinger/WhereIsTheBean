@@ -1,0 +1,47 @@
+a {
+  text-decoration: underline;
+}
+
+a:link {
+  color: rgb(155, 255, 255);
+}
+
+a:visited {
+  color: rgb(225, 0, 225);
+}
+
+a:hover {
+  color: rgb(205, 255, 255);
+}
+
+a:active {
+  color: red;
+}
+
+body {
+  background-color: rgb(55, 55, 55);
+  color: rgb(215, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+iframe {
+  border: 1px solid black;
+  width: 425px;
+  height: 350px;
+  frameborder: 0;
+  scrolling: no;
+  marginheight: 0;
+  marginwidth: 0;
+}
+
+@media screen and (max-width: 400px) {
+  iframe {
+    width: 100%;
+  }
+}
+
+@media screen and (max-height: 300px) {
+  iframe {
+    height: 70%;
+  }
+}
