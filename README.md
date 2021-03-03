@@ -1,3 +1,3 @@
-# WhereIsTheBean
+# Where is the Bean?
 
-The location of The Bean can be found here: https://jjflickinger.github.io/WhereIsTheBean/
+A very simple web app consisting of a map centered on Cloud Gate, the sculpture in Chicago. The map is embedded as an iframe.
