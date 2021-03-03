@@ -3,22 +3,52 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin="">
+    </script>
+  
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@2.5.3/dist/esri-leaflet.js"
+      integrity="sha512-K0Vddb4QdnVOAuPJBHkgrua+/A9Moyv8AQEWi0xndQ+fqbRfAFd47z4A9u1AW/spLO0gEaiE1z98PK1gl5mC5Q=="
+      crossorigin="">
+    </script>
+  
+  <!-- Load Esri Leaflet Renderers from CDN -->
+    <script src="https://unpkg.com/esri-leaflet-renderers@2.1.2/dist/esri-leaflet-renderers.js"
+      integrity="sha512-/McnqdlwYvfeOEWqoniEagFRQnLi/TNbkHe4EJypmZI02LBT7vBU/+PZ5W3FSsFFlRbnMCsJvnbp5MX8XOBrnQ=="
+      crossorigin="">
+    </script>
+  
   <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
   <h1>Where is The Bean?</h1>
   <p>The Bean is here.</p>
-  <div class="map">
-    <iframe
-      src="https://www.openstreetmap.org/export/embed.html?bbox=-87.62424409389497%2C41.882003109441406%2C-87.62243360280992%2C41.88333506900345&amp;layer=mapnik&amp;marker=41.882669092693156%2C-87.62333884835243">
-    </iframe>
-    <br/>
-    <small>
-      <a href="https://www.openstreetmap.org/?mlat=41.88267&amp;mlon=-87.62334#map=19/41.88267/-87.62334">
-        View Larger Map
-      </a>
-    </small>
-  </div>
+  <div id="map"></div>
+  
+  <script>
+      var map = L.map('map').setView([41.8827, -87.6233], 12);
+      L.esri.basemapLayer('Streets').addTo(map);
+  </script>
+
+  <script>
+    var marker = L.marker([41.8827, -87.6233]).addTo(mymap);
+    marker.bindPopup('The bean is here.')
+    marker.on('mouseover', function(e) {
+      this.openPopup();
+    });
+    marker.on('mouseout', function(e) {
+      this.closePopup();
+    });
+  </script>
+  
 </body>
 </html>
