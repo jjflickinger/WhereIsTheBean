@@ -32,15 +32,15 @@
 <body>
   <h1>Where is The Bean?</h1>
   <p>The Bean is here.</p>
-  <div id="map"></div>
+  <div id="mapid"></div>
   
   <script>
-      var map = L.map('map').setView([41.8827, -87.6233], 12);
-      L.esri.basemapLayer('Streets').addTo(map);
+      var mymap = L.map('mapid').setView([41.8827, -87.6233], 12);
+      L.esri.basemapLayer('Streets').addTo(mymap);
   </script>
 
   <script>
-    var marker = L.marker([41.8827, -87.6233]).addTo(map);
+    var marker = L.marker([41.8827, -87.6233]).addTo(mymap);
     marker.bindPopup('The bean is here.')
     marker.on('mouseover', function(e) {
       this.openPopup();
