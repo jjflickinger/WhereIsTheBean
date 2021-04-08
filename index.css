@@ -24,7 +24,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#map {
+#mapid {
   border: 1px solid black;
   width: 425px;
   height: 350px;
